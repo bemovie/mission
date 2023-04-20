@@ -14,19 +14,36 @@ public class mission12 {
 	 
 //	 System.out.println(a+b+c + "의 계산 결과는 " + (a+c));
 	 
+	 switch (b) {
+	 	case "+":
+			System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a+c));
+			break;
+	 	case "=":
+			System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)a + "=" + (int)c);
+			break;
+	 	case "*":
+			System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a*c));
+			break;
+	 	case "/": 
+			System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a/c));
+			break;
+	 }
 	 
-	if (b.equals ("+"))
-		System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a+c));
-	else if (b.equals ("="))
-		System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)a + "=" + (int)c);
-	else if (b.equals ("*"))
-		System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a*c));
-	else if (b.equals ("/") && c != 0) 
-		System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a/c)); 
-	else if (b.equals ("/") && c == 0)
-		System.out.println("0으로 나눌 수 없습니다.");
+//	if (b.equals ("+"))
+//		System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a+c));
+//	else if (b.equals ("="))
+//		System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)a + "=" + (int)c);
+//	else if (b.equals ("*"))
+//		System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a*c));
+//	else if (b.equals ("/") && c != 0) 
+//		System.out.println((int)a+b+(int)c + "의 계산 결과는 " + (int)(a/c)); 
+//	else if (b.equals ("/") && c == 0)
+//		System.out.println("0으로 나눌 수 없습니다.");
 	
 	// casting
+	
+	
+	
 	
 	scan.close();
 		}
