@@ -3,6 +3,7 @@ package exjavapro;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,7 +25,7 @@ public class chap8_10 {
 		System.out.println("이름, 전화번호를 입력하세요>> ");
 		Scanner scan = new Scanner(System.in);
 		try {
-			fw = new FileWriter("c:\\javaex\\phone2.txt", Charset.forName("UTF-8"), true); //true를 추가해야 이어쓰기 가능
+			fw = new FileWriter("D:\\phone.txt", Charset.forName("UTF-8"), true); //true를 추가해야 이어쓰기 가능
 			while(true) {
 				String input = scan.nextLine();
 				if(input.length() == 0) { menu(); break; } // 입력이 0(아무것도 입력안함)이면 break
@@ -41,7 +42,9 @@ public class chap8_10 {
 	}
 		
 	public static void search() throws IOException {
-		File f = new File("C:\\javaex\\phone2.txt");
+//		FileReader reader = new FileReader("D:\\phone.txt", Charset.forName("UTF-8"));
+		
+		File f = new File("D:\\phone.txt");
 		InputStreamReader is = new InputStreamReader(new FileInputStream(f), "UTF-8");
 		BufferedReader reader = new BufferedReader(is);
 		
@@ -49,13 +52,17 @@ public class chap8_10 {
 		StringTokenizer st;
 		HashMap<String, String> map;
 		map = new HashMap<String, String>(); //new로 공간할당
-		while (!(line = reader.readLine()).equals("q")) {
+//		line = reader.readLine();
+//		for (int i = 0 ; i < reader. ; i ++) {
+//		while (!(line = reader.readLine()).equals("q")) {
+		while (( line = reader.readLine()) != null ) {
 			st = new StringTokenizer(line, " ");
 			while(st.hasMoreTokens()) {
 				map.put(st.nextToken(), st.nextToken());
 			}
-
 		}
+//		}
+		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("총 " + map.size() + "개의 전화번호를 읽었습니다.");
 		while (true) {
@@ -65,6 +72,7 @@ public class chap8_10 {
 			else if (msg.equals("그만")) { menu(); break; }
 			else System.out.println("찾는 이름이 없습니다.");
 		}
+		scan.close();
 	}
 	
 	public static void menu() throws IOException {
@@ -77,7 +85,7 @@ public class chap8_10 {
 			case 2 : { search(); break; }
 			case 3 : { System.out.println("종료합니다.."); break; }
 		}
-		
+		scan.close();
 	}
 	
 }

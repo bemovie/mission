@@ -34,7 +34,7 @@ class game {
 			if (s2 >= s) diff = s2 - s;
 			else 		 diff = s2 + 60 - s;
 			
-//			scan.close();
+			scan.close();
 			return diff;
 	}
 	
