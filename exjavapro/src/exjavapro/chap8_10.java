@@ -54,7 +54,7 @@ public class chap8_10 {
 			while(st.hasMoreTokens()) {
 				map.put(st.nextToken(), st.nextToken());
 			}
-			
+
 		}
 		Scanner scan = new Scanner(System.in);
 		System.out.println("총 " + map.size() + "개의 전화번호를 읽었습니다.");
